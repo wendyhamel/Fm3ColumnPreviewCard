@@ -59,8 +59,18 @@ button:-moz-focusring,
 }
 
 .button {
-    color: var(--very-light-gray);
+    background-color: var(--very-light-gray);
+    justify-self: self-start;
+    padding: .75rem 1.5rem;
+    border: 2px solid var(--very-light-gray);
+    border-radius: 99px;
+    letter-spacing: .02rem;
+    cursor: pointer;
     transition: all 300ms ease-in-out;
+}
+.button:hover, .button:focus {
+    background-color: hsla(0, 0%, 100%, 0);
+    color: var(--very-light-gray);
 }
 
 .text-contrast {
@@ -94,18 +104,61 @@ button:-moz-focusring,
     background-color: var(--very-dark-cyan);
 }
 
-.layout {
 
+.section {
+    padding: 3rem 1rem;
 }
 .container {
-    margin: 3rem 1.5rem;
+    margin: auto;
     border-radius: 0.5rem;
     overflow: hidden;
+    display: grid;
+    max-width: fit-content;
 }
 
 .card {
-    padding: 2rem;
+    padding: 3rem;
+    display: grid;
+    gap:1.25rem;
+    max-width: 316px;
  }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.card-title {
+    font-size: 2.2rem;
+    letter-spacing: .08rem;
+    text-transform: uppercase;
+}
+.card-body {
+    letter-spacing: .02rem;
+    line-height: 1.5rem;
+}
+
+.attribution {
+    margin: 1rem;
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: var(--dark-cyan);
+}
+
+@media  (min-width: 1200px) {
+    .layout {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .container {
+        margin: 10vh auto ;
+        grid-template-columns: repeat(3, 316px);
+    }
+
+    .card {
+        gap:2rem;
+    }
+    .card-body {
+        padding-bottom:3rem;
+    }
+}
