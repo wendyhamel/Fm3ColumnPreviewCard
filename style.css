@@ -156,7 +156,6 @@ button:-moz-focusring,
 
 @media  (min-width: 1200px) {
     .layout {
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
